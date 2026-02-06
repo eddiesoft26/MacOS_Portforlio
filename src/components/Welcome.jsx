@@ -1,3 +1,4 @@
+
 import gsap from "gsap";
 import React, { useRef, useLayoutEffect } from "react";
 
@@ -5,7 +6,6 @@ const FONT_WEIGHTS = {
   subtitle: { min: 100, max: 900, default: 100 },
   title: { min: 400, max: 900, default: 400 },
 };
-
 const setupTextHover = (container, type) => {
   if (!container) return () => {};
 
