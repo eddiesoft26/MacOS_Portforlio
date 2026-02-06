@@ -1,11 +1,13 @@
-import Navbar from "#components/Navbar"
+import { Navbar, Dock, Welcome } from "#components";
 
 const App = () => {
   return (
-   <main>
-    <Navbar />
-   </main>
-  )
-}
+    <main>
+      <Navbar />
+      <Welcome />
+      <Dock />
+    </main>
+  );
+};
 
-export default App
+export default App;
