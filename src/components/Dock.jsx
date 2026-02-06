@@ -2,8 +2,7 @@ import { dockApps } from "#constants";
 import { Tooltip } from "react-tooltip";
 import React, { useRef, useLayoutEffect } from "react"; // ✅ useLayoutEffect instead of useGSAP
 import gsap from "gsap";
-import useWindowStore from "../Store/Window";
-
+import useWindowStore from "../store/Window";
 
 const Dock = () => {
   const { openWindow, closeWindow, windows } = useWindowStore();
@@ -41,7 +40,7 @@ const Dock = () => {
 
     const resetIcons = () =>
       icons.forEach((icon) =>
-        gsap.to(icon, { scale: 1, y: 0, duration: 0.3, ease: "power1.out" })
+        gsap.to(icon, { scale: 1, y: 0, duration: 0.3, ease: "power1.out" }),
       );
 
     dock.addEventListener("mousemove", handleMouseMove);
@@ -58,8 +57,8 @@ const Dock = () => {
 
     const window = windows[app.id];
 
-    if(!window){
-      console.log(`Window not found for app:${app.id}`)
+    if (!window) {
+      console.log(`Window not found for app:${app.id}`);
       return;
     }
     if (window.isOpen) {
